@@ -32,7 +32,7 @@ if(Number(hours) !== Number(0)){
  */
 export const getBytecode = async (address) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/api/get-bytecode?data=${address}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/api/get-bytecode?data=${address}`);
     if (!response.ok) {
       throw new Error("Error: " + response.status);
     }
@@ -46,7 +46,7 @@ export const getBytecode = async (address) => {
 //////get all accounts///////
 export const getAccountData = async () => {
     try {
-      const response = await fetch("http://20.121.130.99:5000/api/accounts");
+      const response = await fetch("https://mangoscanbackend-production.up.railway.app/api/accounts");
       if (!response.ok) {
         throw new Error("Error: " + response.status);
       }
@@ -61,7 +61,7 @@ export const getAccountData = async () => {
 /////get Search result
 export const getSearchResult = async (searchVal) => {
     try {
-      const response = await fetch(`http://20.121.130.99:5000/api/search?keyword=${searchVal}`);
+      const response = await fetch(`https://mangoscanbackend-production.up.railway.app/api/search?keyword=${searchVal}`);
       const data = await response.json();
       if (data) {
         // console.log(data)
@@ -79,7 +79,7 @@ export const getSearchResult = async (searchVal) => {
 
 /////grt address details////
 export const getUserAddressDetails = async(address) =>{
-  const response = await fetch('http://20.121.130.99:5000/address', {
+  const response = await fetch('https://mangoscanbackend-production.up.railway.app/address', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ address: address }),
@@ -94,7 +94,7 @@ export const getUserAddressDetails = async(address) =>{
 ////get panding transaction////
 export const getPendingTransactionData = async () => {
   try {
-    const response = await fetch("http://20.121.130.99:5000/api/transactions/pending");
+    const response = await fetch("https://mangoscanbackend-production.up.railway.app/api/transactions/pending");
     if (!response.ok) {
       throw new Error("Error: " + response.status);
     }
@@ -109,7 +109,7 @@ export const getPendingTransactionData = async () => {
 ////get all blocks////
 export const getBlockData = async (page=1,size=12) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/api/get/blocks?page=${page}&size=${size}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/api/get/blocks?page=${page}&size=${size}`);
     if (!response.ok) {
       throw new Error("Error: " + response.status);
     }
@@ -124,7 +124,7 @@ export const getBlockData = async (page=1,size=12) => {
 ////get all transactions/////
 export const getTransactionData = async () => {
   try {
-    const response = await fetch("http://20.121.130.99:5000/api/get/transactions");
+    const response = await fetch("https://mangoscanbackend-production.up.railway.app/api/get/transactions");
     if (!response.ok) {
       throw new Error("Error: " + response.status);
     }
@@ -139,7 +139,7 @@ export const getTransactionData = async () => {
 
 export const getTransactionDatanew = async (page,size=10) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/api/get/transactions/new?page=${page}&size=${size}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/api/get/transactions/new?page=${page}&size=${size}`);
     if (!response.ok) {
       throw new Error("Error: " + response.status);
     }
@@ -153,7 +153,7 @@ export const getTransactionDatanew = async (page,size=10) => {
 
 export const getAddressinfoTrx = async (page,size=10,address) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/api/get/addressinfo/transactions?page=${page}&size=${size}&keyword=${address}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/api/get/addressinfo/transactions?page=${page}&size=${size}&keyword=${address}`);
     if (!response.ok) {
       throw new Error("Error: " + response.status);
     }
@@ -167,7 +167,7 @@ export const getAddressinfoTrx = async (page,size=10,address) => {
 ///// getblockdetails using number//////
 export const getblockdeta = async (number) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/getblockdata?number=${number}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/getblockdata?number=${number}`);
     const data = await response.json();
 
     if (response.ok) {
@@ -187,7 +187,7 @@ export const getblockdeta = async (number) => {
 /////check transaction hash in user to address//////
 export const checktransactionhash = async (address) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/check-address?address=${address}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/check-address?address=${address}`);
     const data = await response.json();
 
     if (response.ok) {
@@ -209,7 +209,7 @@ export const checktransactionhash = async (address) => {
 
 export const checkTrx = async (hash) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/checkTRX?hash=${hash}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/checkTRX?hash=${hash}`);
     const data = await response.json();
     if (response.ok) {
       // console.log(data);
@@ -226,7 +226,7 @@ export const checkTrx = async (hash) => {
 
 export const getTokenDetails = async (contract_address) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/getTokenDetails?address=${contract_address}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/getTokenDetails?address=${contract_address}`);
     const data = await response.json();
     if (response.ok) {
      return data;
@@ -238,7 +238,7 @@ export const getTokenDetails = async (contract_address) => {
 
 export const getHoldersDetails = async (contract_address) => {
   try {
-    const response = await fetch(`http://20.121.130.99:5000/getHoldersDetails?address=${contract_address}`);
+    const response = await fetch(`https://mangoscanbackend-production.up.railway.app/getHoldersDetails?address=${contract_address}`);
     const data = await response.json();
     if (response.ok) {
      return data;
