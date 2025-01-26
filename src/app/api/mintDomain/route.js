@@ -16,7 +16,7 @@ async function sendUserDataToExternalAPI() {
     const config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://54.87.155.123:6000/api/usertoAddress',
+        url: 'https://mangoscanbackend-production.up.railway.app/api/usertoAddress',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer Z2hkZmdkZmctZGZzZG1mMzJta21zZGtmbjEyZGtsZm1sa2RtZmxrZG0zNDNmNGdmZzVx`
